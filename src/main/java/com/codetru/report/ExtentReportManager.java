@@ -7,6 +7,9 @@ import com.codetru.utils.BrowserInfoUtils;
 import com.codetru.utils.DateUtils;
 import com.codetru.utils.IconUtils;
 import com.codetru.utils.ReportUtils;
+
+import tech.grasshopper.reporter.ExtentPDFReporter;
+
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.Status;
@@ -43,13 +46,13 @@ public class ExtentReportManager {
                 System.out.println("Link Extent Report: " + link);
             }
 
-//            ExtentPDFReporter pdf = new ExtentPDFReporter("reports/ExtentReports/PdfReport.pdf");
-//            try {
-//                pdf.loadJSONConfig(new File("src/test/resources/pdf-config.json"));
-//            } catch (IOException e) {
-//                throw new RuntimeException(e);
-//            }
-//            extentReports.attachReporter(pdf);
+            ExtentPDFReporter pdf = new ExtentPDFReporter("reports/ExtentReports/PdfReport.pdf");
+            try {
+                pdf.loadJSONConfig(new File("src/test/resources/pdf-config.json"));
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+            extentReports.attachReporter(pdf);
 
             ExtentSparkReporter spark = new ExtentSparkReporter(link);
             extentReports.attachReporter(spark);

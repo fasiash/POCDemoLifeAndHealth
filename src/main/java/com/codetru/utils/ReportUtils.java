@@ -41,7 +41,7 @@ public class ReportUtils {
         if (OPEN_REPORTS_AFTER_EXECUTION.trim().equalsIgnoreCase(YES)) {
             try {
                 Desktop.getDesktop().browse(new File(linkReport).toURI());
-            } catch (FileNotFoundException fileNotFoundException) {
+                Desktop.getDesktop().browse(new File(EXTENT_REPORT_FOLDER_PATH + File.separator+"PdfReport.pdf").toURI());            } catch (FileNotFoundException fileNotFoundException) {
                 throw new InvalidPathForExtentReportFileException("Extent Report file you are trying to reach is not found", fileNotFoundException.fillInStackTrace());
             } catch (IOException ioException) {
                 throw new FrameworkException("Extent Report file you are trying to reach got IOException while reading the file", ioException.fillInStackTrace());
