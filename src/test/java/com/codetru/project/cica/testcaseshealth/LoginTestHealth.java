@@ -13,31 +13,31 @@ import org.testng.annotations.Test;
 @Feature("Login Test")
 public class LoginTestHealth extends BaseTestHealth {
 
-//    @Test(priority = 1)
-//    public void TC_LoginFailWithEmailNull() {
-//        getLoginPage1().loginFailWithEmailNull();
-//    }
-//
-//    @Test(priority = 2)
-//    public void TC_LoginFailWithEmailDoesNotExist() {
-//        ExcelHelpers excel = new ExcelHelpers();
-//        excel.setExcelFile(FrameworkConstants.EXCEL_CMS_LOGIN, "Login");
-//        getLoginPage1().loginFailWithEmailDoesNotExist(excel.getCellData(1, "email"), excel.getCellData(1, "password"));
-//    }
-//
-//    @Test(priority = 3)
-//    public void TC_LoginFailWithNullPassword() {
-//        ExcelHelpers excel = new ExcelHelpers();
-//        excel.setExcelFile(FrameworkConstants.EXCEL_CMS_LOGIN, "Login");
-//        getLoginPage1().loginFailWithNullPassword(excel.getCellData(2, "email"));
-//    }
-//
-//    @Test(priority = 4)
-//    public void TC_LoginFailWithIncorrectPassword() {
-//        ExcelHelpers excel = new ExcelHelpers();
-//        excel.setExcelFile(FrameworkConstants.EXCEL_CMS_LOGIN, "Login");
-//        getLoginPage1().loginFailWithIncorrectPassword(excel.getCellData(3, "email"), excel.getCellData(3, "password"));
-//    }
+    @Test(priority = 1)
+    public void TC_LoginFailWithEmailNull() {
+        getLoginPage1().loginFailWithEmailNull();
+    }
+
+    @Test(priority = 2)
+    public void TC_LoginFailWithEmailDoesNotExist() {
+        ExcelHelpers excel = new ExcelHelpers();
+        excel.setExcelFile(FrameworkConstants.EXCEL_CMS_LOGIN, "Login");
+        getLoginPage1().loginFailWithEmailDoesNotExist(excel.getCellData(1, "email"), excel.getCellData(1, "password"));
+    }
+
+    @Test(priority = 3)
+    public void TC_LoginFailWithNullPassword() {
+        ExcelHelpers excel = new ExcelHelpers();
+        excel.setExcelFile(FrameworkConstants.EXCEL_CMS_LOGIN, "Login");
+        getLoginPage1().loginFailWithNullPassword(excel.getCellData(2, "email"));
+    }
+
+    @Test(priority = 4)
+    public void TC_LoginFailWithIncorrectPassword() {
+        ExcelHelpers excel = new ExcelHelpers();
+        excel.setExcelFile(FrameworkConstants.EXCEL_CMS_LOGIN, "Login");
+        getLoginPage1().loginFailWithIncorrectPassword(excel.getCellData(3, "email"), excel.getCellData(3, "password"));
+    }
 
     @Test(priority = 5)
     public void TC_LoginSuccessWithCustomerAccount() {

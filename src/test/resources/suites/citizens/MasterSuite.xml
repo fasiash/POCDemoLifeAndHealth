@@ -17,7 +17,7 @@
 
 	<!--	<class name="com.codetru.project.cica.testcaseshealth.LoginTestHealth" />-->
 			<class name="com.codetru.project.cica.testcases.HomePageTest" />
-			<class name="com.codetru.project.cica.testcases.Step1_Test" />
+		<class name="com.codetru.project.cica.testcases.Step1_Test" />
 			<class name="com.codetru.project.cica.testcases.Step2_Test" />
 			<class name="com.codetru.project.cica.testcases.Step3_Test" />
 			<class name="com.codetru.project.cica.testcases.Step4_Test" />
