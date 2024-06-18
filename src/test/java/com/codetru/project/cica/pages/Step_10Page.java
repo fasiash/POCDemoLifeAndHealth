@@ -148,7 +148,9 @@ public class Step_10Page extends CommonPageCICA {
 	private By AcountNumber = By.xpath("//ion-input[@formcontrolname='AccountNumber']/input");
 	private By Error_RoutingNumber = By.xpath("//ion-input[@formcontrolname='RoutingNumber']/parent::ion-item/parent::ion-col");
 	private By RountingNumber = By.xpath("//ion-input[@formcontrolname='RoutingNumber']/input");
-	
+
+	private By insuredPolicyNumber = By.xpath("//tbody/tr/td[1]");
+	public static String PolicyNumber;
 	//-----------------------------------------------------------------------------------------------
 //	private By recipientEmail = By.id("ReceiptEmail");
 //	private By sendReceiptBtn = By.id("sendReceipt");
@@ -180,8 +182,8 @@ public class Step_10Page extends CommonPageCICA {
 		String billing_Card_SecuCode_Err = "Enter a valid security code";
 		String billing_Pin_Hint = "Last 3 digits on the back of card";
 		String billing_Pin_Hint_Front = "4 digits on the front of card";
-
-		WebUI.clickElement(MakePayment_Step_9);
+		WebUI.sleep(3);
+		WebUI.clickElementWithJs(MakePayment_Step_9);
 		WebUI.sleep(2);
 		
 		WebUI.clickElement(RelationShipDropDown,2);
@@ -438,7 +440,12 @@ public class Step_10Page extends CommonPageCICA {
 		WebUI.waitForPageLoaded();
 
 		WebUI.switchToParentFrame();
+		
 		WebUI.sleep(1);
+		String policyDetails = WebUI.getTextElement(insuredPolicyNumber);
+		System.out.println("Policy Holder Name and Policy Number: "+policyDetails);
+		PolicyNumber = policyDetails.replaceAll("[^0-9]", "");
+		System.out.println("Policy Number: "+PolicyNumber);
 		
 		WebUI.setText(mail_Id, PropertiesHelpers.getValue("recipient_Email"));
 		WebUI.sleep(1);

@@ -9,6 +9,7 @@ import org.openqa.selenium.Keys;
 
 import com.codetru.project.cica.pages.HomePage;
 import com.codetru.project.cica.pages.LoginPage;
+import com.codetru.project.cica.pages.PaymentValidationPage;
 import com.codetru.project.cica.pages.Step_10Page;
 import com.codetru.project.cica.pages.Step_10PageACH;
 import com.codetru.project.cica.pages.Step_1Page;
@@ -36,7 +37,8 @@ public class CommonPageCICA {
 	private Step_9Page step_9Page;
 	private Step_10Page step_10Page;
 	private Step_10PageACH step_10PageACH;
-	
+
+	private PaymentValidationPage paymentValidate;
 
 	public LoginPage getLoginPage() {
 		if (loginCICA == null) {
@@ -128,7 +130,12 @@ public class CommonPageCICA {
 		}
 		return step_10PageACH;
 	}
-	
+	public PaymentValidationPage getPaymentValidationPage() {
+		if (paymentValidate == null) {
+			paymentValidate = new PaymentValidationPage();
+		}
+		return paymentValidate;
+	}
 //  ------------------------------------------------------------------------------------------------------------------
 
 	private By menuProducts = By.xpath("//span[normalize-space()='Products']");

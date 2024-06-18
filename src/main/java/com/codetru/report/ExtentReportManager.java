@@ -94,7 +94,7 @@ public class ExtentReportManager {
      */
     public static void addScreenShot(String message) {
         String base64Image = "data:image/png;base64," + ((TakesScreenshot) DriverManager.getDriver()).getScreenshotAs(OutputType.BASE64);
-
+        
         //Base64 from Screenshot of Selenium
         //ExtentTestManager.getExtentTest().log(Status.INFO, MediaEntityBuilder.createScreenCaptureFromBase64String(base64Image).build());
 
@@ -111,7 +111,7 @@ public class ExtentReportManager {
      */
     public static void addScreenShot(Status status, String message) {
         String base64Image = "data:image/png;base64," + ((TakesScreenshot) DriverManager.getDriver()).getScreenshotAs(OutputType.BASE64);
-
+        
         //Base64 from Screenshot of Selenium
         //ExtentTestManager.getExtentTest().log(status, MediaEntityBuilder.createScreenCaptureFromBase64String(base64Image).build());
 

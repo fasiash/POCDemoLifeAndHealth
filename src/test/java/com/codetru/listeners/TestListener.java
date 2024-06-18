@@ -172,6 +172,7 @@ public class TestListener implements ITestListener, ISuiteListener, IInvokedMeth
 
         if (SCREENSHOT_FAILED_STEPS.equals(YES)) {
             CaptureHelpers.captureScreenshot(DriverManager.getDriver(), getTestName(iTestResult));
+           
         }
 
         if (VIDEO_RECORD.toLowerCase().trim().equals(YES)) {

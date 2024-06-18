@@ -25,7 +25,7 @@
 			<class name="com.codetru.project.cica.testcaseshealth.Step6_TestHealth" />
 			<class name="com.codetru.project.cica.testcaseshealth.Step7_TestHealth" />
 			<class name="com.codetru.project.cica.testcaseshealth.Step8_TestHealth" />
-			<class name="com.codetru.project.cica.testcases.Step10_TestACH" />
+			<class name="com.codetru.project.cica.testcaseshealth.Step9_TestHealth" />
 			
 			
 		</classes>

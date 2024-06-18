@@ -44,7 +44,7 @@ private By ListEditButton_application1 = By.xpath("//tbody/tr/td[10]/ion-button[
     	System.out.println("From Step_9Page==================================: "+Step_1Page.Randomfirstname);	
     	WebUI.clickCorrespondingElement(Step_1Page.Randomfirstname, hiddenCells, ListEditButton_application1);
     	WebUI.sleep(2);
-		WebUI.clickElement(Upload_Application);
+		WebUI.clickElementsWithJs(Upload_Application);
 		WebUI.sleep(4);
 		
     }

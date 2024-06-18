@@ -9,17 +9,17 @@
 
 	<test name="Citizens New Life Application-TX">
 		<parameter name="BROWSER" value="chrome" />
-		<parameter name="USERID" value="7251257" />
+		<parameter name="USERID" value="7252533" />
 		<parameter name="PASSWORD" value="RockStar_K8" />
-		<parameter name="state" value="TX"/>
+		<parameter name="state" value="AL"/>
 		 
 		<classes>
 
 	<!--	<class name="com.codetru.project.cica.testcaseshealth.LoginTestHealth" />-->
 			<class name="com.codetru.project.cica.testcases.HomePageTest" />
-		<class name="com.codetru.project.cica.testcases.Step1_Test" />
+			<class name="com.codetru.project.cica.testcases.Step1_Test" />
 			<class name="com.codetru.project.cica.testcases.Step2_Test" />
-			<class name="com.codetru.project.cica.testcases.Step3_Test" />
+				<class name="com.codetru.project.cica.testcases.Step3_Test" />
 			<class name="com.codetru.project.cica.testcases.Step4_Test" />
 			<class name="com.codetru.project.cica.testcases.Step5_Test" />
 			<class name="com.codetru.project.cica.testcases.Step6_Test" />
@@ -27,7 +27,7 @@
 			<class name="com.codetru.project.cica.testcases.Step8_Test" />
 			<class name="com.codetru.project.cica.testcases.Step9_Test" />
 			<class name="com.codetru.project.cica.testcases.Step10_Test" />
-			
+			<class name="com.codetru.project.cica.testcases.PaymentValidationTest" />
 		</classes>
 	</test>
 	

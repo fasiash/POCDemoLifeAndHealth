@@ -81,7 +81,7 @@ public class LoginPage extends CommonPageCICA {
     }
 
     public void loginSuccessWithCustomerAccount(String email, String password) {
-//    	WebUI.sleep(30);
+
         openLoginPage();
         sleep(2);
         setText(inputEmail, email);

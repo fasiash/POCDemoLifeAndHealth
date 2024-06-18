@@ -14,14 +14,20 @@ import org.testng.annotations.*;
 @Listeners({TestListener.class})
 public class BaseTest extends CommonPageCICA {
 
+//    @Parameters("BROWSER")
+//    @BeforeTest
+//    public void createDriver(@Optional("chrome") String browser) {
+//        WebDriver driver = ThreadGuard.protect(new TargetFactory().createInstance(browser));
+//        DriverManager.setDriver(driver);
+//        driver.manage().window().maximize();
+//    }
     @Parameters("BROWSER")
     @BeforeTest
-    public void createDriver(@Optional("chrome") String browser) {
+    public void createDriver(String browser) {
         WebDriver driver = ThreadGuard.protect(new TargetFactory().createInstance(browser));
         DriverManager.setDriver(driver);
         driver.manage().window().maximize();
     }
-
 //    @AfterTest(alwaysRun = true)
 //    public void closeDriver() {
 //        DriverManager.quit();

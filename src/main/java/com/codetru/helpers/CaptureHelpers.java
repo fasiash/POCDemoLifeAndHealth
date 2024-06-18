@@ -6,6 +6,7 @@
 package com.codetru.helpers;
 
 import com.codetru.constants.FrameworkConstants;
+import com.codetru.driver.DriverManager;
 import com.codetru.utils.LogUtils;
 
 import org.apache.commons.io.FileUtils;
@@ -17,6 +18,7 @@ import org.monte.screenrecorder.ScreenRecorder;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.io.FileHandler;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
@@ -173,29 +175,31 @@ public class CaptureHelpers extends ScreenRecorder {
         return filePathRelative;
     }
 
+//   
     public static String getScreenshotAbsolutePath(String screenshotName) {
-        Rectangle allScreenBounds = new Rectangle(Toolkit.getDefaultToolkit().getScreenSize());
+        // Get current date and time to append to the screenshot name
         String dateName = new SimpleDateFormat("yyyy-MM-dd-hh-mm-ss.SSS").format(new Date());
-        BufferedImage image = null;
-        try {
-            image = new Robot().createScreenCapture(allScreenBounds);
-        } catch (AWTException e) {
-            throw new RuntimeException(e);
-        }
 
+        // Construct the path where the screenshot will be saved
         String path = Helpers.getCurrentDir() + FrameworkConstants.EXTENT_REPORT_FOLDER + File.separator + "images";
 
+        // Create the folder if it doesn't exist
         File folder = new File(path);
         if (!folder.exists()) {
             folder.mkdir();
             LogUtils.info("Folder created: " + folder);
         }
 
+        // Construct the full file path with the screenshot name and date
         String filePath = path + File.separator + screenshotName + dateName + ".png";
 
-        File file = new File(filePath);
+        // Capture the screenshot using Selenium
+        File srcFile = ((TakesScreenshot) DriverManager.getDriver()).getScreenshotAs(OutputType.FILE);
+        File destFile = new File(filePath);
+
+        // Save the screenshot to the specified location
         try {
-            ImageIO.write(image, "PNG", file);
+            FileHandler.copy(srcFile, destFile);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

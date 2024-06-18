@@ -470,9 +470,12 @@
                     <artifactId>maven-surefire-plugin</artifactId>
                     <version>${maven-surefire-plugin.version}</version>
                     <configuration>
+			
                         <suiteXmlFiles>
                             <!--<suiteXmlFile>${suite.all}</suiteXmlFile>-->
-                            <suiteXmlFile>src/test/resources/suites/citizens/MasterSuiteLifeHealthACH.xml</suiteXmlFile>
+                          
+                            <suiteXmlFile>src/test/resources/suites/citizens/MasterSuiteACH.xml</suiteXmlFile>
+                             
                         </suiteXmlFiles>
                         <argLine>
                             -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectjweaver.version}/aspectjweaver-${aspectjweaver.version}.jar"
