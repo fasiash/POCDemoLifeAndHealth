@@ -1,5 +1,6 @@
 package com.codetru.project.cica.pages;
 
+
 import static com.codetru.keywords.WebUI.getAttributeElement;
 import static com.codetru.keywords.WebUI.getTextElement;
 
@@ -88,7 +89,7 @@ public class Step_10Page extends CommonPageCICA {
 	
 	private By billingCountry = By.xpath("//select[@formcontrolname='Country']");
 	
-	private By billingCountrySelection = By.xpath("//option[.=' COLOMBIA']");
+	private By billingCountrySelection = By.xpath("//option[.=' UNITED STATES']");
 	
 	private By Error_BillignPhoneNumber = By.xpath("(//h3[.='Billing Information']/following-sibling::ion-row/ion-col[@size='24' and @class='md hydrated'])[8]");
 	
@@ -267,10 +268,18 @@ public class Step_10Page extends CommonPageCICA {
 		WebUI.sleep(1);
 		WebUI.clickElement(StateSelection);
 
+		
+		
 		WebUI.scrollToElementAtBottom(Error_BillignZipCode);
 		WebUI.verifyElementVisible(Error_BillignZipCode, 2);
 		WebUI.verifyContains(getTextElement(Error_BillignZipCode).trim(), Mandatory_Err);
 
+		WebUI.clearText(billingZipCode);
+		WebUI.setText(billingZipCode, "5478415114155211");
+		WebUI.verifyElementVisible(Error_BillignZipCode);
+		WebUI.verifyContains(getTextElement(Error_BillignZipCode).trim(), billing_Zip_Max_Char_Err);
+		WebUI.sleep(1);
+		
 		String RandomBillingZipcode = DataGenerateUtils.randomZipCode();
 		WebUI.clearAndFillText(billingZipCode,RandomBillingZipcode);
 		WebUI.sleep(1);
@@ -495,10 +504,10 @@ public class Step_10Page extends CommonPageCICA {
 		
 		JavascriptExecutor js = (JavascriptExecutor) DriverManager.getDriver();
 		
-//		WebElement open_file = (WebElement) js.executeScript("return document.querySelector('downloads-manager').shadowRoot.querySelector('downloads-item').shadowRoot.querySelector('div>div>div>a')");
+		WebElement open_file = (WebElement) js.executeScript("return document.querySelector('downloads-manager').shadowRoot.querySelector('downloads-item').shadowRoot.querySelector('div>div>div>a')");
 		WebUI.sleep(1);
-//		open_file.click();
-		WebUI.clickElementWithJs(open_file);
+		open_file.click();
+//		WebUI.clickElementWithJs(open_file);
 		WebUI.sleep(1);
 		
 	

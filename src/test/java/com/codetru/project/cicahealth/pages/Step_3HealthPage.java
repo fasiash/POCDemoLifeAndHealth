@@ -225,7 +225,7 @@ public class Step_3HealthPage extends CommonPageHealthCICA {
 //		WebUI.verifyElementVisible(Error_BenificicaryCity_Message);
 //		WebUI.verifyContains(getTextElement(Error_BenificicaryCity_Message).trim(), Max_error);
 
-		String RandomBenificiaryCity = DataGenerateUtils.randomCity();
+		String RandomBenificiaryCity = "Phoenix";
 		WebUI.clearAndFillText(BenificiaryCity,RandomBenificiaryCity);
 		WebUI.sleep(1);
 		WebUI.verifyContains(getAttributeElement(BenificiaryCity,"value"),RandomBenificiaryCity);

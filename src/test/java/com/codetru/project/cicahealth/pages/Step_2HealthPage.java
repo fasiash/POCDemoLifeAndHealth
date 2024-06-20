@@ -228,7 +228,7 @@ public class Step_2HealthPage extends CommonPageHealthCICA {
 		WebUI.verifyElementVisible(ZipCodeSearch);
 		WebUI.clickElement(ZipCodeSearch);
 		WebUI.sleep(2);
-		
+		WebUI.scrollToElementAtBottom(IsYourMallingAddresRadioButton_yes);
 //		WebUI.verifyElementVisible(Error_MessageIsYourMallingAddres);
 //		WebUI.verifyContains(getTextElement(Error_MessageIsYourMallingAddres).trim(), Mandatory_Error);
 		WebUI.verifyElementClickable(IsYourMallingAddresRadioButton_yes);

@@ -524,7 +524,7 @@ public class Step_10PageACH extends CommonPageHealthCICA {
 //		WebUI.clearAndFillText(billingCityAndRegion, PropertiesHelpers.getValue("billing_City"));
 //		WebUI.sleep(1);
 //		WebUI.verifyContains(getAttributeElement(billingCityAndRegion, "value"), PropertiesHelpers.getValue("billing_City"));
-		String RandomBillingCity = DataGenerateUtils.randomCity();
+		String RandomBillingCity = "Little Rock";
 		WebUI.clearAndFillText(billingCityAndRegion,RandomBillingCity);
 		WebUI.sleep(1);
 		WebUI.verifyContains(getAttributeElement(billingCityAndRegion,"value"),RandomBillingCity);
