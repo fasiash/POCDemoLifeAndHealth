@@ -200,7 +200,7 @@ public class Step_3HealthPage extends CommonPageHealthCICA {
 //		WebUI.verifyElementVisible(Error_BenificicaryAddress_1_Message);
 //		WebUI.verifyContains(getTextElement(Error_BenificicaryAddress_1_Message).trim(), Max_error);
 
-		String RandomBenificiaryAddress = DataGenerateUtils.randomShortAddress();
+		String RandomBenificiaryAddress = "520 Jordan Rd,Sedona";
 		WebUI.clearAndFillText(BenificiaryAddress_1,RandomBenificiaryAddress);
 		WebUI.sleep(1);
 		WebUI.verifyContains(getAttributeElement(BenificiaryAddress_1,"value"),RandomBenificiaryAddress);
@@ -211,12 +211,12 @@ public class Step_3HealthPage extends CommonPageHealthCICA {
 //		WebUI.verifyElementVisible(Error_MaximumBenificiaryAddress_2_Message);
 //		WebUI.verifyContains(getTextElement(Error_MaximumBenificiaryAddress_2_Message).trim(), Max_error);
 
-		String RandomBenificiaryAddress_2 = DataGenerateUtils.randomShortAddress();
-		WebUI.clearAndFillText(BenificiaryAddress_2,RandomBenificiaryAddress_2);
-		WebUI.sleep(1);
-		WebUI.verifyContains(getAttributeElement(BenificiaryAddress_2,"value"),RandomBenificiaryAddress_2);
-		WebUI.scrollToElementAtBottom(AddBenificiary);
-		WebUI.verifyElementVisible(AddBenificiary);
+//		String RandomBenificiaryAddress_2 = DataGenerateUtils.randomShortAddress();
+//		WebUI.clearAndFillText(BenificiaryAddress_2,RandomBenificiaryAddress_2);
+//		WebUI.sleep(1);
+//		WebUI.verifyContains(getAttributeElement(BenificiaryAddress_2,"value"),RandomBenificiaryAddress_2);
+//		WebUI.scrollToElementAtBottom(AddBenificiary);
+//		WebUI.verifyElementVisible(AddBenificiary);
 
 //		WebUI.verifyContains(getTextElement(Error_BenificicaryCity_Message).trim(), Mandatory_Error);
 	

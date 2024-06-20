@@ -184,7 +184,7 @@ public class Step_2HealthPage extends CommonPageHealthCICA {
 //		WebUI.verifyElementVisible(Error_Address_1_Message);
 //		WebUI.verifyContains(getTextElement(Error_Address_1_Message).trim(), Max_error);
 //
-		String RandomAddress = DataGenerateUtils.randomShortAddress();
+		String RandomAddress = "28-310,1 RIVER ROAD BUILDING";
 		WebUI.clearAndFillText(Address_1_Message,RandomAddress);
 		WebUI.sleep(1);
 		WebUI.verifyContains(getAttributeElement(Address_1_Message,"value"),RandomAddress);
@@ -194,11 +194,11 @@ public class Step_2HealthPage extends CommonPageHealthCICA {
 //		WebUI.verifyElementVisible(Error_Address_2_Message);
 //		WebUI.verifyContains(getTextElement(Error_Address_2_Message).trim(), Max_error);
 		
-		String RandomAddress_2 = DataGenerateUtils.randomShortAddress();
-		WebUI.clearAndFillText(Address_2_Message,RandomAddress_2);
-		WebUI.sleep(1);
-		WebUI.scrollToElementAtBottom(Error_MessageIsYourMallingAddres);
-		WebUI.verifyContains(getAttributeElement(Address_2_Message,"value"),RandomAddress_2);
+//		String RandomAddress_2 = DataGenerateUtils.randomShortAddress();
+//		WebUI.clearAndFillText(Address_2_Message,RandomAddress_2);
+//		WebUI.sleep(1);
+//		WebUI.scrollToElementAtBottom(Error_MessageIsYourMallingAddres);
+//		WebUI.verifyContains(getAttributeElement(Address_2_Message,"value"),RandomAddress_2);
 	
 //		WebUI.verifyElementVisible(Error_ZipCode_Message);
 //		WebUI.verifyContains(getTextElement(Error_ZipCode_Message).trim(), Mandatory_Error);

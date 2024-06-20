@@ -9,7 +9,7 @@
 
 	<test name="Citizens New Life Application-Al">
 		<parameter name="BROWSER" value="chrome" />
-		<parameter name="USERID" value="7252533" />
+		<parameter name="USERID" value="7251968" />
 		<parameter name="PASSWORD" value="RockStar_K8" />
 		<parameter name="state" value="AL"/>
 		 
@@ -19,7 +19,7 @@
 			<class name="com.codetru.project.cica.testcases.HomePageTest" />
 			<class name="com.codetru.project.cica.testcases.Step1_Test" />
 			<class name="com.codetru.project.cica.testcases.Step2_Test" />
-				<class name="com.codetru.project.cica.testcases.Step3_Test" />
+			<class name="com.codetru.project.cica.testcases.Step3_Test" />
 			<class name="com.codetru.project.cica.testcases.Step4_Test" />
 			<class name="com.codetru.project.cica.testcases.Step5_Test" />
 			<class name="com.codetru.project.cica.testcases.Step6_Test" />

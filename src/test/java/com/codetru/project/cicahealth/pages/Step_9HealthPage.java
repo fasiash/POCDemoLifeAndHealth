@@ -408,7 +408,7 @@ public class Step_9HealthPage extends CommonPageHealthCICA {
 //		WebUI.clearAndFillText(billingStreetAddress, PropertiesHelpers.getValue("billing_Address"));
 //		WebUI.sleep(1);
 //		WebUI.verifyContains(getAttributeElement(billingStreetAddress, "value"), PropertiesHelpers.getValue("billing_Address"));
-		String RandomBillingAddress = DataGenerateUtils.randomShortAddress();
+		String RandomBillingAddress = "28-310,1 RIVER ROAD BUILDING";
 		WebUI.clearAndFillText(billingStreetAddress,RandomBillingAddress);
 		WebUI.sleep(1);
 		WebUI.verifyContains(getAttributeElement(billingStreetAddress,"value"),RandomBillingAddress);

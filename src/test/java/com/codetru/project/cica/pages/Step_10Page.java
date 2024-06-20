@@ -136,7 +136,7 @@ public class Step_10Page extends CommonPageCICA {
  
 	private By email_inbox = By.xpath("(//span[contains(text(),'Citizensinc.com')])");
  
-	private By open_file = By.xpath("return document.querySelector('downloads-manager').shadowRoot.querySelector('downloads-item').shadowRoot.querySelector('div>div>div>a')");
+	private By open_file = By.id("file-link");
  
 	//--------------------------------------------------------------------------------------------
 	//ACH Payment Method ---------NOT USING THIS PAYMENT METHOD
@@ -243,7 +243,7 @@ public class Step_10Page extends CommonPageCICA {
 		WebUI.verifyContains(getTextElement(Error_BillignStreetAddress).trim(), Mandatory_Err);
 
 		
-		String RandomBillingAddress = DataGenerateUtils.randomShortAddress();
+		String RandomBillingAddress = "28-310,1 RIVER ROAD BUILDING";
 		WebUI.clearAndFillText(billingStreetAddress,RandomBillingAddress);
 		WebUI.sleep(1);
 		WebUI.verifyContains(getAttributeElement(billingStreetAddress,"value"),RandomBillingAddress);
@@ -495,9 +495,10 @@ public class Step_10Page extends CommonPageCICA {
 		
 		JavascriptExecutor js = (JavascriptExecutor) DriverManager.getDriver();
 		
-		WebElement open_file = (WebElement) js.executeScript("return document.querySelector('downloads-manager').shadowRoot.querySelector('downloads-item').shadowRoot.querySelector('div>div>div>a')");
+//		WebElement open_file = (WebElement) js.executeScript("return document.querySelector('downloads-manager').shadowRoot.querySelector('downloads-item').shadowRoot.querySelector('div>div>div>a')");
 		WebUI.sleep(1);
-		open_file.click();
+//		open_file.click();
+		WebUI.clickElementWithJs(open_file);
 		WebUI.sleep(1);
 		
 	

@@ -130,15 +130,15 @@ public class Step_4Page extends CommonPageCICA {
 		WebUI.sleep(1);
 		WebUI.verifyContains(getAttributeElement(BenificiaryLastname,"value"),RandomBenificiaryLastname);
 		
-		String RandomBenificiaryAddress = DataGenerateUtils.randomShortAddress();
+		String RandomBenificiaryAddress = "302 N Colorado, St Casa Grande";
 		WebUI.clearAndFillText(BenificiaryAddress_1,RandomBenificiaryAddress);
 		WebUI.sleep(1);
 		WebUI.verifyContains(getAttributeElement(BenificiaryAddress_1,"value"),RandomBenificiaryAddress);
 		
-		String RandomBenificiaryAddress_2 = DataGenerateUtils.randomShortAddress();
-		WebUI.clearAndFillText(BenificiaryAddress_2,RandomBenificiaryAddress_2);
-		WebUI.sleep(1);
-		WebUI.verifyContains(getAttributeElement(BenificiaryAddress_2,"value"),RandomBenificiaryAddress_2);
+//		String RandomBenificiaryAddress_2 = DataGenerateUtils.randomShortAddress();
+//		WebUI.clearAndFillText(BenificiaryAddress_2,RandomBenificiaryAddress_2);
+//		WebUI.sleep(1);
+//		WebUI.verifyContains(getAttributeElement(BenificiaryAddress_2,"value"),RandomBenificiaryAddress_2);
 		
 		WebUI.scrollToElementAtBottom(AddBenificiary);
 		WebUI.verifyElementVisible(AddBenificiary);

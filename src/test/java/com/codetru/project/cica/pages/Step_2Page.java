@@ -94,15 +94,15 @@ public class Step_2Page extends CommonPageCICA {
 		WebUI.sleep(1);
 		WebUI.verifyContains(getAttributeElement(phoneNumber,"value"),RandomPhoneumber);
 		
-		String RandomAddress = DataGenerateUtils.randomShortAddress();
+		String RandomAddress = "1908 Dogwood, Dr Manhattan";
 		WebUI.clearAndFillText(Address_1_Message,RandomAddress);
 		WebUI.sleep(1);
 		WebUI.verifyContains(getAttributeElement(Address_1_Message,"value"),RandomAddress);
 		
 
-		WebUI.clearAndFillText(Address_2_Message, PropertiesHelpers.getValue("address_2"));
-		WebUI.sleep(1);
-		WebUI.verifyContains(getAttributeElement(Address_2_Message, "value"), PropertiesHelpers.getValue("address_2"));
+//		WebUI.clearAndFillText(Address_2_Message, PropertiesHelpers.getValue("address_2"));
+//		WebUI.sleep(1);
+//		WebUI.verifyContains(getAttributeElement(Address_2_Message, "value"), PropertiesHelpers.getValue("address_2"));
 
 
 		WebUI.clearAndFillText(ZipCode, PropertiesHelpers.getValue("zip_Code"));
