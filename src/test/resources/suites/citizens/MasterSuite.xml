@@ -7,7 +7,7 @@
 		  
 	</listeners>
 
-	<test name="Citizens New Life Application-TX">
+	<test name="Citizens New Life Application-Al">
 		<parameter name="BROWSER" value="chrome" />
 		<parameter name="USERID" value="7252533" />
 		<parameter name="PASSWORD" value="RockStar_K8" />

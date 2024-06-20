@@ -14,7 +14,7 @@ import com.codetru.report.ExtentTestManager;
 import com.codetru.utils.BrowserInfoUtils;
 import com.codetru.utils.DateUtils;
 import com.codetru.utils.LogUtils;
-import com.codetru.utils.SoundUtils;
+
 import com.aventstack.extentreports.Status;
 import com.codetru.constants.FrameworkConstants;
 import com.codetru.driver.DriverManager;
@@ -2651,7 +2651,7 @@ public class WebUI {
     public static void clearText(By by) {
         waitForElementVisible(by).clear();
         LogUtils.info("Clear text in textbox " + by.toString());
-        SoundUtils.playSound("C:\\Users\\Codetru\\Downloads\\CitizensFW\\AutomationFramework\\src\\test\\resources\\config\\Sounds\\Keyboard-Button-Click-02-c-FesliyanStudios.com.mp3");
+//        SoundUtils.playSound("C:\\Users\\Codetru\\Downloads\\CitizensFW\\AutomationFramework\\src\\test\\resources\\config\\Sounds\\Keyboard-Button-Click-02-c-FesliyanStudios.com.mp3");
         if (ExtentTestManager.getExtentTest() != null) {
             ExtentReportManager.pass("Clear text in textbox " + by.toString());
         }
@@ -3468,7 +3468,7 @@ public class WebUI {
         element.sendKeys(value);
 
         // Play default sound when sending keys
-        SoundUtils.playSound("C:\\Users\\Codetru\\Downloads\\CitizensFW\\AutomationFramework\\src\\test\\resources\\config\\Sounds\\mixkit-martial-arts-fast-punch-2047.wav");  // Replace with the actual path to your sound file
+//        SoundUtils.playSound("C:\\Users\\Codetru\\Downloads\\CitizensFW\\AutomationFramework\\src\\test\\resources\\config\\Sounds\\mixkit-martial-arts-fast-punch-2047.wav");  // Replace with the actual path to your sound file
 
         LogUtils.info("Clear and Fill " + value + " on " + by.toString());
 

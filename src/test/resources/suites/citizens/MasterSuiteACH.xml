@@ -7,7 +7,7 @@
 		  
 	</listeners>
 
-	<test name="CITIZENS REGRESSION TEST With State-GAasdfg">
+	<test name="Citizens New Health Application-TX">
 		<parameter name="BROWSER" value="edge" />
 
 		<parameter name="state" value="TX"/>
