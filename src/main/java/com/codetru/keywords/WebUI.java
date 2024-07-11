@@ -2573,7 +2573,7 @@ public class WebUI {
     public static void setText(By by, String value) {
         waitForElementVisible(by).sendKeys(value);
         LogUtils.info("Set text " + value + " on " + by.toString());
-        playDefaultSound();
+//        playDefaultSound();
         if (ExtentTestManager.getExtentTest() != null) {
             ExtentReportManager.pass("Set text " + value + " on " + by.toString());
         }
@@ -3479,10 +3479,10 @@ public class WebUI {
         addScreenshotToReport(Thread.currentThread().getStackTrace()[1].getMethodName() + "_" + DateUtils.getCurrentDateTime());
     }
 
-    // Method to play the default system sound
-    public static void playDefaultSound() {
-        Toolkit.getDefaultToolkit().beep();
-    }
+//    // Method to play the default system sound
+//    public static void playDefaultSound() {
+//        Toolkit.getDefaultToolkit().beep();
+//    }
     @Step("Send keys '{1}' to element {0} using JavaScript")
     public static boolean sendKeysWithJavaScript(By element, String keys) {
         smartWait();
