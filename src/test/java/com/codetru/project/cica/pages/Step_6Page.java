@@ -14,6 +14,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.codetru.keywords.WebUI;
 import com.codetru.project.cica.CommonPageCICA;
+import com.codetru.utils.JiraCreateIssue;
 
 public class Step_6Page extends CommonPageCICA {
 
@@ -58,7 +59,7 @@ public class Step_6Page extends CommonPageCICA {
 	private By NextStep7 = By.xpath("(//ion-row[@style='padding-left: 50px;']/ion-col[@class='md hydrated']/ion-button)[6]");
 
 	private By Physician_textbox = By.xpath("//ion-input[@formcontrolname='PhysicianName']");
-
+	@JiraCreateIssue(isCreateIssue = true)
 	public void Predetermination_Questions() throws Exception {
 
 		String Mandatory_Err = "Please enter a value.";

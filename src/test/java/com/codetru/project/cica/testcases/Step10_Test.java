@@ -5,10 +5,12 @@ import org.testng.annotations.Test;
 import com.codetru.common.BaseTest;
 import com.codetru.constants.FrameworkConstants;
 import com.codetru.helpers.ExcelHelpers;
+import com.codetru.utils.JiraCreateIssue;
 
 public class Step10_Test extends BaseTest {
 	
-	 @Test
+    @JiraCreateIssue(isCreateIssue = true)
+	@Test
     public void TC_Make_a_Payment() throws Exception {
         ExcelHelpers excel = new ExcelHelpers();
         excel.setExcelFile(FrameworkConstants.EXCEL_CMS_LOGIN, "Login");

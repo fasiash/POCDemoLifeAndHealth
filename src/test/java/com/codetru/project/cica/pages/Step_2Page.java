@@ -10,6 +10,8 @@ import com.codetru.helpers.PropertiesHelpers;
 import com.codetru.keywords.WebUI;
 import com.codetru.project.cica.CommonPageCICA;
 import com.codetru.utils.DataGenerateUtils;
+import com.codetru.utils.JiraCreateIssue;
+
 
 public class Step_2Page extends CommonPageCICA {
 
@@ -53,7 +55,7 @@ public class Step_2Page extends CommonPageCICA {
 	private By Error_City_Message = By.xpath("(//ion-col[@class = 'md hydrated' and @size-md = '10'])[1]");
 
 	private By NextStep3 = By.xpath("(//ion-row/ion-col/ion-button[starts-with(@class, 'md button')])[8]");
-
+	@JiraCreateIssue(isCreateIssue = true)
 	public void Proposed_Insured_Information() throws Exception {
 		
 		String Email_Max = "destinysdfghdfghdfsgdsfgsdfgdfghdfghdsfghjdsfghdfghdfghfgh";

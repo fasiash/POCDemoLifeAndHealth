@@ -5,9 +5,11 @@ import org.testng.annotations.Test;
 import com.codetru.common.BaseTest;
 import com.codetru.constants.FrameworkConstants;
 import com.codetru.helpers.ExcelHelpers;
+import com.codetru.utils.JiraCreateIssue;
 
 public class Step3_Test extends BaseTest {
 	
+    @JiraCreateIssue(isCreateIssue = true)
 	 @Test
     public void TC_Policy_Owner_Information() throws Exception {
         ExcelHelpers excel = new ExcelHelpers();

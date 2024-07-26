@@ -10,6 +10,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import com.codetru.keywords.WebUI;
 import com.codetru.project.cica.CommonPageCICA;
+import com.codetru.utils.JiraCreateIssue;
 
 import net.bytebuddy.description.ModifierReviewable.OfAbstraction;
 
@@ -31,7 +32,7 @@ public class Step_9Page extends CommonPageCICA {
 private By ListEditButton_application1 = By.xpath("//tbody/tr/td[10]/ion-button[1]");
 	
 	private By hiddenCells = By.xpath("//tbody/tr/td[1]");
- 
+	@JiraCreateIssue(isCreateIssue = true)
     public void Edit_Submit() throws Exception
     {
     	

@@ -3,12 +3,14 @@ package com.codetru.project.cica.testcases;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
+import com.codetru.utils.JiraCreateIssue;
 import com.codetru.common.BaseTest;
 import com.codetru.constants.FrameworkConstants;
 import com.codetru.helpers.ExcelHelpers;
 
 public class Step1_Test extends BaseTest {
 	
+	@JiraCreateIssue(isCreateIssue = true)
 	 @Test
 	 @Parameters("state")
     public void TC_Product_Information(String state) throws Exception {

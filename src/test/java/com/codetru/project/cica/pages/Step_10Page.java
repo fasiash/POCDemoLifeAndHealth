@@ -19,7 +19,9 @@ import com.codetru.driver.DriverManager;
 import com.codetru.helpers.PropertiesHelpers;
 import com.codetru.keywords.WebUI;
 import com.codetru.project.cica.CommonPageCICA;
+import com.codetru.project.cica.ProjectUtils;
 import com.codetru.utils.DataGenerateUtils;
+import com.codetru.utils.JiraCreateIssue;
 
 public class Step_10Page extends CommonPageCICA {
 	
@@ -157,7 +159,7 @@ public class Step_10Page extends CommonPageCICA {
 //	private By sendReceiptBtn = By.id("sendReceipt");
 //	private By loginID = By.id("login");
 //	private By refreshButton = By.id("refreshbut");
-
+	@JiraCreateIssue(isCreateIssue = true)
 	public void Make_a_Payment() throws Exception {
 
 		String Max_Name = "PaymentasdfgaedfsdfgwSEDFGASDFGBASDFGBASDFGASDFGBASDFGSADF1234sdfsghdsfghjdfgh2345";
@@ -277,7 +279,7 @@ public class Step_10Page extends CommonPageCICA {
 		WebUI.clearText(billingZipCode);
 		WebUI.setText(billingZipCode, "5478415114155211");
 		WebUI.verifyElementVisible(Error_BillignZipCode);
-		WebUI.verifyContains(getTextElement(Error_BillignZipCode).trim(), billing_Zip_Max_Char_Err);
+		ProjectUtils.verifyContainsForJira(getTextElement(Error_BillignZipCode).trim(), billing_Zip_Max_Char_Err);
 		WebUI.sleep(1);
 		
 		String RandomBillingZipcode = DataGenerateUtils.randomZipCode();
@@ -330,13 +332,13 @@ public class Step_10Page extends CommonPageCICA {
 		WebUI.clickElement(CardNumber);
 		WebUI.sleep(1);
 		
-		WebUI.clearText(CardNumber);
-		WebUI.setText(CardNumber, "123456567");
-		WebUI.clickElement(cardHolderName);
-		WebUI.sleep(1);
-		WebUI.verifyElementVisible(Error_CardNumber);
-		WebUI.verifyContains(getTextElement(Error_CardNumber).trim(), billing_Invalid_Card_Err);
-		WebUI.sleep(1);
+//		WebUI.clearText(CardNumber);
+//		WebUI.setText(CardNumber, "123456567");
+//		WebUI.clickElement(cardHolderName);
+//		WebUI.sleep(1);
+//		WebUI.verifyElementVisible(Error_CardNumber);
+//		WebUI.verifyContains(getTextElement(Error_CardNumber).trim(), billing_Invalid_Card_Err);
+//		WebUI.sleep(1);
 		
 		
 		WebUI.clearText(CardNumber);

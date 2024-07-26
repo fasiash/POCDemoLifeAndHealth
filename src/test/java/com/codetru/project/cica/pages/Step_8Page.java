@@ -17,6 +17,7 @@ import com.codetru.helpers.PropertiesHelpers;
 import com.codetru.keywords.WebUI;
 import com.codetru.project.cica.CommonPageCICA;
 import com.codetru.utils.DataGenerateUtils;
+import com.codetru.utils.JiraCreateIssue;
 
 
 public class Step_8Page extends CommonPageCICA {
@@ -54,7 +55,7 @@ public class Step_8Page extends CommonPageCICA {
 		private By Sign2 = By.xpath("(//img[@width='150'])[2]");
 	
 		private By application_btn = By.id("applicationButton");
-		
+		@JiraCreateIssue(isCreateIssue = true)
 		public void Disclosure_and_Signature() throws Exception {
 	
 			String Max_Name = "sdfsadfgdfsfghfghxfghjdsfghdfghdfghjdfsghdsfghretyu";

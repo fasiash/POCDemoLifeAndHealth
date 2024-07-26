@@ -5,6 +5,7 @@ import com. codetru.enums.Browser;
 import com. codetru.enums.CategoryType;
 import com.codetru.helpers.CaptureHelpers;
 import com.codetru.helpers.FileHelpers;
+import com.codetru.helpers.Helpers;
 import com.codetru.helpers.PropertiesHelpers;
 import com.codetru.helpers.ScreenRecoderHelpers;
 import com.codetru.keywords.WebUI;
@@ -15,6 +16,8 @@ import com.codetru.utils.BrowserInfoUtils;
 import com.codetru.utils.EmailSendUtils;
 import com.codetru.utils.LogUtils;
 import com.codetru.utils.ZipUtils;
+import com.codetru.utils.JiraCreateIssue;
+import com.codetru.utils.JiraServiceProvider;
 import com.aventstack.extentreports.Status;
 import com.codetru.annotations.FrameworkAnnotation;
 import com.codetru.constants.FrameworkConstants;
@@ -24,6 +27,8 @@ import com.google.common.collect.ImmutableMap;
 import io.qameta.allure.Allure;
 import io.qameta.allure.listener.TestLifecycleListener;
 import io.qameta.allure.model.TestResult;
+
+import org.apache.commons.lang.exception.ExceptionUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.testng.*;
@@ -32,7 +37,10 @@ import static com.codetru.constants.FrameworkConstants.*;
 
 import java.awt.*;
 import java.io.ByteArrayInputStream;
+import java.io.File;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class TestListener implements ITestListener, ISuiteListener, IInvokedMethodListener {
 
@@ -40,6 +48,7 @@ public class TestListener implements ITestListener, ISuiteListener, IInvokedMeth
     static int count_passedTCs;
     static int count_skippedTCs;
     static int count_failedTCs;
+    public static String currentMethodName;
 
     private ScreenRecoderHelpers screenRecorder;
     
@@ -131,6 +140,8 @@ public class TestListener implements ITestListener, ISuiteListener, IInvokedMeth
 
     @Override
     public void onTestStart(ITestResult iTestResult) {
+        currentMethodName=iTestResult.getName();
+
         LogUtils.info("Test case: " + getTestName(iTestResult) + " is starting...");
         count_totalTCs = count_totalTCs + 1;
 
@@ -167,6 +178,7 @@ public class TestListener implements ITestListener, ISuiteListener, IInvokedMeth
 
     @Override
     public void onTestFailure(ITestResult iTestResult) {
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy HH-mm-ss");
         LogUtils.error("Test case: " + getTestName(iTestResult) + " is failed.");
         count_failedTCs = count_failedTCs + 1;
 
@@ -189,7 +201,22 @@ public class TestListener implements ITestListener, ISuiteListener, IInvokedMeth
 
         //AllureManager.takeScreenshotToAttachOnAllureReport();
         //AllureManager.saveTextLog(iTestResult.getThrowable().toString());
+        
+        //Integration with Jira (create new issue)
 
+        boolean isLogIssue = iTestResult.getMethod().getConstructorOrMethod().getMethod().getAnnotation(JiraCreateIssue.class).isCreateIssue();
+        if (isLogIssue) {
+            JiraServiceProvider JiraServiceProvider = new JiraServiceProvider();
+            String issueDescription = "Failure reason from Automation Selenium\n\n" + iTestResult.getThrowable().getMessage() + "\n";
+            issueDescription.concat(ExceptionUtils.getFullStackTrace(iTestResult.getThrowable()));
+            String issueSummary = iTestResult.getMethod().getConstructorOrMethod().getMethod().getName() + " Failed in Automation Selenium";
+            JiraServiceProvider.createJiraIssue("Bug", issueSummary, issueDescription);
+         JiraServiceProvider.addAttachmentToJiraIssue(CaptureHelpers.getScreenshotAbsolutePath(iTestResult.getName()));
+            JiraServiceProvider.addAttachmentToJiraIssue("logs/applog.log");
+            
+        }
+
+    
     }
 
     @Override
@@ -213,5 +240,5 @@ public class TestListener implements ITestListener, ISuiteListener, IInvokedMeth
         LogUtils.error("Test failed but it is in defined success ratio: " + getTestName(iTestResult));
         ExtentReportManager.logMessage("Test failed but it is in defined success ratio: " + getTestName(iTestResult));
     }
-
+    
 }

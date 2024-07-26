@@ -13,6 +13,8 @@ import com.codetru.report.ExtentReportManager;
 import com.codetru.report.ExtentTestManager;
 import com.codetru.utils.BrowserInfoUtils;
 import com.codetru.utils.DateUtils;
+import com.codetru.utils.JiraCreateIssue;
+import com.codetru.utils.JiraServiceProvider;
 import com.codetru.utils.LogUtils;
 
 import com.aventstack.extentreports.Status;
@@ -27,6 +29,7 @@ import com.google.zxing.client.j2se.BufferedImageLuminanceSource;
 import com.google.zxing.common.HybridBinarizer;
 import io.qameta.allure.Step;
 import org.apache.commons.io.FileUtils;
+import org.apache.commons.lang.exception.ExceptionUtils;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.Point;
 import org.openqa.selenium.*;
@@ -75,7 +78,9 @@ public class WebUI {
      * Stop the Soft Assert of TestNG
      */
     public static void stopSoftAssertAll() {
-        softAssert.assertAll();
+    	
+    		softAssert.assertAll();
+     
     }
 
     /**
@@ -1433,9 +1438,13 @@ public class WebUI {
 
 //            Assert.assertEquals(value1, value2, value1 + " NOT CONTAINS " + value2);
             softAssert.assertEquals(value1, value2, value1 + " NOT CONTAINS " + value2);
+//           JiraServiceProvider jsp = new JiraServiceProvider();
+//           jsp.addAttachmentToJiraIssue(value2);
+            
         }
         return result;
     }
+   
 
     /**
      * Verify if the first object contains the second object.
@@ -1445,26 +1454,26 @@ public class WebUI {
      * @param message The custom message if false
      * @return true/false
      */
-    @Step("Verify Contains: {0} ---AND--- {1}")
-    public static boolean verifyContains(String value1, String value2, String message) {
-        boolean result = value1.contains(value2);
-        if (result == true) {
-            LogUtils.info("Verify Equals: " + value1 + " CONTAINS " + value2);
-            if (ExtentTestManager.getExtentTest() != null) {
-                ExtentReportManager.pass("Verify Contains: " + value1 + " CONTAINS " + value2);
-            }
-            AllureManager.saveTextLog("Verify Contains: " + value1 + "CONTAINS" + value2);
-        } else {
-            LogUtils.info("Verify Contains: " + value1 + " NOT CONTAINS " + value2);
-            if (ExtentTestManager.getExtentTest() != null) {
-                ExtentReportManager.fail("Verify Contains: " + value1 + " NOT CONTAINS " + value2);
-            }
-            AllureManager.saveTextLog("Verify Contains: " + value1 + " NOT CONTAINS " + value2);
-
-            Assert.assertEquals(value1, value2, message);
-        }
-        return result;
-    }
+//    @Step("Verify Contains: {0} ---AND--- {1}")
+//    public static boolean verifyContains(String value1, String value2, String message) {
+//        boolean result = value1.contains(value2);
+//        if (result == true) {
+//            LogUtils.info("Verify Equals: " + value1 + " CONTAINS " + value2);
+//            if (ExtentTestManager.getExtentTest() != null) {
+//                ExtentReportManager.pass("Verify Contains: " + value1 + " CONTAINS " + value2);
+//            }
+//            AllureManager.saveTextLog("Verify Contains: " + value1 + "CONTAINS" + value2);
+//        } else {
+//            LogUtils.info("Verify Contains: " + value1 + " NOT CONTAINS " + value2);
+//            if (ExtentTestManager.getExtentTest() != null) {
+//                ExtentReportManager.fail("Verify Contains: " + value1 + " NOT CONTAINS " + value2);
+//            }
+//            AllureManager.saveTextLog("Verify Contains: " + value1 + " NOT CONTAINS " + value2);
+//
+//            Assert.assertEquals(value1, value2, message);
+//        }
+//        return result;
+//    }
 
     /**
      * Verify the condition is true.
@@ -3498,5 +3507,6 @@ public class WebUI {
             return false;
         }
     }
-
+    
+ 
 }

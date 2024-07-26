@@ -17,6 +17,7 @@ import com.codetru.helpers.PropertiesHelpers;
 import com.codetru.keywords.WebUI;
 import com.codetru.project.cica.CommonPageCICA;
 import com.codetru.utils.DataGenerateUtils;
+import com.codetru.utils.JiraCreateIssue;
 
 
 public class Step_4Page extends CommonPageCICA {
@@ -96,7 +97,7 @@ public class Step_4Page extends CommonPageCICA {
 
 	private By NextStep5 = By.xpath("(//ion-row[@style='padding-left: 50px;']/ion-col[@class='md hydrated']/ion-button[starts-with(@class, md)])[4]");
 
-
+	@JiraCreateIssue(isCreateIssue = true)
 	public void Beneficiary_Information() throws Exception {
 
 

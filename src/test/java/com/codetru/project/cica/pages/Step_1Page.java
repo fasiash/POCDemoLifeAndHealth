@@ -16,8 +16,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import com.codetru.helpers.PropertiesHelpers;
 import com.codetru.keywords.WebUI;
 import com.codetru.project.cica.CommonPageCICA;
+import com.codetru.project.cica.ProjectUtils;
 import com.codetru.utils.DataFakerUtils;
 import com.codetru.utils.DataGenerateUtils;
+import com.codetru.utils.JiraCreateIssue;
 
 
 public class Step_1Page extends CommonPageCICA{
@@ -88,7 +90,8 @@ public class Step_1Page extends CommonPageCICA{
 	private By insuredInfoElement = By.xpath("//h3[.='Proposed Insured Info']");
 	
 	public static String Randomfirstname;
-
+	
+    @JiraCreateIssue(isCreateIssue = true)
 	public void Product_Information(String statex) throws Exception {
 
 		String Mandate_Error = "Please enter a value.";
@@ -106,12 +109,12 @@ public class Step_1Page extends CommonPageCICA{
 		WebUI.clearAndFillTextSound(FirstName,Randomfirstname);
 		WebUI.sleep(0.5);
 		WebUI.verifyContains(getAttributeElement(FirstName,"value"),Randomfirstname);
-				
+//		WebUI.verifyContains(getAttributeElement(FirstName,"value"),"Jasim");		
 
 		String Randommiddlename = DataGenerateUtils.randomMiddleName();
 		WebUI.clearAndFillTextSound(MiddleName,Randommiddlename);
 		WebUI.sleep(0.5);
-		WebUI.verifyContains(getAttributeElement(MiddleName,"value"),Randommiddlename);
+		ProjectUtils.verifyContainsForJira(getAttributeElement(MiddleName,"value"),Randommiddlename);
 		
 		WebUI.clearText(LastName);
 		String Randomlastname = DataGenerateUtils.randomLastName();

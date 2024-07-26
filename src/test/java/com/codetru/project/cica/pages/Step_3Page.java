@@ -8,6 +8,7 @@ import org.openqa.selenium.By;
 import com.codetru.helpers.PropertiesHelpers;
 import com.codetru.keywords.WebUI;
 import com.codetru.project.cica.CommonPageCICA;
+import com.codetru.utils.JiraCreateIssue;
 
 public class Step_3Page extends CommonPageCICA {
 	
@@ -22,7 +23,7 @@ public class Step_3Page extends CommonPageCICA {
 	private By Error_ProposedOWner_Message = By.xpath("//form[@class='ng-untouched ng-pristine ng-invalid']//div[@class='block-info-app']");
 
 	private By BenificiaryFirstname = By.xpath("//ion-input[@formcontrolname='BeneficiaryFirstName']/input");
-
+	@JiraCreateIssue(isCreateIssue = true)
 	public void Policy_Owner_Information() throws Exception {
 		
 		String Mandatory_Error = "Please enter a value.";

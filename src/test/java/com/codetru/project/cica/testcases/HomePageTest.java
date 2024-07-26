@@ -3,6 +3,7 @@ package com.codetru.project.cica.testcases;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
+import com.codetru.utils.JiraCreateIssue;
 import com.codetru.common.BaseTest;
 import com.codetru.constants.FrameworkConstants;
 import com.codetru.helpers.ExcelHelpers;
@@ -18,7 +19,7 @@ public class HomePageTest extends BaseTest {
         getHomePage().Open_Application_Module();
     }
 */	
-	
+	@JiraCreateIssue(isCreateIssue = true)
 	 @Parameters({"USERID", "PASSWORD"})
 	 @Test
 	 public void TC_Open_Application_Module(String userName, String pwd) throws Exception {

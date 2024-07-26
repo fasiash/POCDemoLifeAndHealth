@@ -11,6 +11,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import com.codetru.keywords.WebUI;
 import com.codetru.project.cica.CommonPageCICA;
+import com.codetru.utils.JiraCreateIssue;
 
 public class Step_5Page extends CommonPageCICA {
 
@@ -25,7 +26,7 @@ public class Step_5Page extends CommonPageCICA {
 	private By ExitingInsurance_Question_1 = By.xpath("(//ion-label[text()='No ']/following-sibling::ion-radio[@slot='start'])[1]");
 
 	private By Error_HealthQuestions_1 = By.xpath("//div[@class='block-info-app' and @style='margin-top: 20px; margin-bottom: 20px;' ]/div[1]/ion-row/ion-col[@class='md hydrated']");
-
+	@JiraCreateIssue(isCreateIssue = true)
 	public void Existing_Insurance() throws Exception {
 
 		String Mandatory_Error = "Please enter a value.";

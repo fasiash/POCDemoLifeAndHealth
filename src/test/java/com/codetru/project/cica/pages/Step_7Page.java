@@ -9,6 +9,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import com.codetru.keywords.WebUI;
 import com.codetru.project.cica.CommonPageCICA;
+import com.codetru.utils.JiraCreateIssue;
 
 
 public class Step_7Page extends CommonPageCICA{
@@ -18,7 +19,7 @@ public class Step_7Page extends CommonPageCICA{
 	private By nextstep7 = By.xpath("(//ion-row[@style='padding-left: 50px;']/ion-col[@class='md hydrated']/ion-button)[6]");	
 
 	private By Disclosure = By.xpath("//h3[.='HIPAA Privacy Authorization']");
-
+	@JiraCreateIssue(isCreateIssue = true)
 	public void Remarks() throws Exception {
 
 		WebUI.moveToElement(nextstep7);

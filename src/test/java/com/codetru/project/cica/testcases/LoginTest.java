@@ -1,5 +1,6 @@
 package com.codetru.project.cica.testcases;
 
+import com.codetru.utils.JiraCreateIssue;
 import com.codetru.common.BaseTest;
 import com.codetru.constants.FrameworkConstants;
 import com.codetru.helpers.ExcelHelpers;
@@ -37,7 +38,7 @@ public class LoginTest extends BaseTest {
         excel.setExcelFile(FrameworkConstants.EXCEL_CMS_LOGIN, "Login");
         getLoginPage().loginFailWithIncorrectPassword(excel.getCellData(3, "email"), excel.getCellData(3, "password"));
     }
-
+    @JiraCreateIssue(isCreateIssue = true)
     @Test(priority = 5)
     public void TC_LoginSuccessWithCustomerAccount() {
         ExcelHelpers excel = new ExcelHelpers();

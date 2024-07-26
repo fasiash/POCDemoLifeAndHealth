@@ -5,8 +5,8 @@
 
 package com.codetru.constants;
 
-import com.codetru.helpers.Helpers;
 import com.codetru.helpers.PropertiesHelpers;
+import com.codetru.helpers.Helpers;
 import com.codetru.utils.ReportUtils;
 
 import java.io.File;
@@ -39,6 +39,7 @@ public final class FrameworkConstants {
     public static final String EXTENT_REPORT_FOLDER = PropertiesHelpers.getValue("EXTENT_REPORT_FOLDER");
     public static final String EXPORT_VIDEO_PATH = PropertiesHelpers.getValue("EXPORT_VIDEO_PATH");
     public static final String EXPORT_CAPTURE_PATH = PropertiesHelpers.getValue("EXPORT_CAPTURE_PATH");
+    public static final String EXPORT_SCREENSHOT_PATH = PropertiesHelpers.getValue("EXPORT_SCREENSHOT_PATH");
     public static final String SEND_REPORT_TO_TELEGRAM = PropertiesHelpers.getValue("SEND_REPORT_TO_TELEGRAM");
     public static final String TELEGRAM_TOKEN = PropertiesHelpers.getValue("TELEGRAM_TOKEN");
     public static final String TELEGRAM_CHATID = PropertiesHelpers.getValue("TELEGRAM_CHATID");
@@ -56,6 +57,7 @@ public final class FrameworkConstants {
     public static final String ZIP_FOLDER_PATH = PropertiesHelpers.getValue("ZIP_FOLDER_PATH");
     public static final String ZIP_FOLDER_NAME = PropertiesHelpers.getValue("ZIP_FOLDER_NAME");
     public static final String VIDEO_RECORD = PropertiesHelpers.getValue("VIDEO_RECORD");
+    public static String SCREENSHOT_PATH = PropertiesHelpers.getValue("SCREENSHOT_PATH");
 
     public static final String LOCATE = PropertiesHelpers.getValue("LOCATE");
     public static final String RETRY_TEST_FAIL = PropertiesHelpers.getValue("RETRY_TEST_FAIL");
